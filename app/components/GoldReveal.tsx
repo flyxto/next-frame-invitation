@@ -67,9 +67,9 @@ export default function GoldReveal() {
     root.addEventListener("pointerdown", skip);
     window.addEventListener("keydown", skip);
 
-    const retreat = sheet
-      ?.getAnimations?.()
-      .find((clip) => clip.animationName === "gold-retreat");
+    const retreat = sheet?.getAnimations?.().find((clip): clip is CSSAnimation => {
+      return clip instanceof CSSAnimation && clip.animationName === "gold-retreat";
+    });
     if (retreat?.playState === "finished") finish();
 
     const watch = () => {
