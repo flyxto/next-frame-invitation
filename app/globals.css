@@ -18,6 +18,27 @@
 html {
   background: var(--bg);
   scroll-behavior: smooth;
+  scrollbar-color: var(--gold) #140e09;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #140e09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold) 42%, #8a5820);
+  border: 2px solid #140e09;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fff1c4, var(--gold-bright) 45%, var(--gold));
 }
 
 body {
@@ -27,18 +48,93 @@ body {
   overflow-x: hidden;
 }
 
-/* ---------- Animation start states ----------
-   GSAP (Motion.tsx / Reveal.tsx) animates these in. They start hidden so
-   there is no flash before the entrance runs. */
+/* ---------- Opening ----------
+   A gold foil covers the viewport. A circular hole, centered just past the
+   bottom-right, grows until the foil is left only in the top-left and then
+   gone. --r is the hole's radius in vmax. Click or Escape skips it. */
 
-.arc-tl,
-.arc-tl-inner,
-.arc-bl,
-.logo-enter,
-.reveal,
-.br-line {
-  opacity: 0;
+@property --r {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
 }
+
+.gold-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  overflow: hidden;
+  pointer-events: auto;
+  background: transparent;
+  animation: gold-veil-hide 1ms linear 3.2s forwards;
+}
+
+.gold-veil.is-done {
+  visibility: hidden;
+  pointer-events: none;
+  animation: none;
+}
+
+.gold-veil.is-done .gold-veil__sheet {
+  animation: none;
+}
+
+@keyframes gold-veil-hide {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.gold-veil__sheet {
+  --r: 0;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 108% 114%,
+    transparent calc(var(--r) * 1vmax),
+    #fff6d4 calc(var(--r) * 1vmax + 0.4vmax),
+    #f0d48a calc(var(--r) * 1vmax + 1.5vmax),
+    #e2b45e calc(var(--r) * 1vmax + 4vmax),
+    #d4a44c calc(var(--r) * 1vmax + 12vmax),
+    #c9963c calc(var(--r) * 1vmax + 28vmax),
+    #c08f38 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at 108% 114%,
+    transparent calc(var(--r) * 1vmax),
+    rgba(0, 0, 0, 0.55) calc(var(--r) * 1vmax + 1.1vmax),
+    #000 calc(var(--r) * 1vmax + 2.6vmax)
+  );
+  mask-image: radial-gradient(
+    circle at 108% 114%,
+    transparent calc(var(--r) * 1vmax),
+    rgba(0, 0, 0, 0.55) calc(var(--r) * 1vmax + 1.1vmax),
+    #000 calc(var(--r) * 1vmax + 2.6vmax)
+  );
+  animation: gold-retreat 2.75s cubic-bezier(0.42, 0.02, 0.16, 1) 0.28s forwards;
+}
+
+@keyframes gold-retreat {
+  from {
+    --r: 0;
+  }
+  to {
+    --r: 175;
+  }
+}
+
+.gold-veil__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
 
 .br-line {
   transform-box: fill-box;
@@ -46,8 +142,25 @@ body {
 }
 
 .divider-grow {
-  transform: scaleX(0);
   transform-origin: center;
+}
+
+/* Held back until the gold foil has left. Motion.tsx / Reveal.tsx bring them in. */
+@media (prefers-reduced-motion: no-preference) {
+  .poster canvas,
+  .arc-tl,
+  .arc-tl-inner,
+  .arc-bl,
+  .logo-enter,
+  .reveal,
+  .br-line,
+  .divider-grow {
+    opacity: 0;
+  }
+
+  .divider-grow {
+    transform: scaleX(0);
+  }
 }
 
 .gold-shimmer {
@@ -66,20 +179,23 @@ body {
   color: transparent;
 }
 
-/* Reduced motion: show everything in its final state, no movement */
+/* Reduced motion: the invitation is simply there. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+  .gold-veil {
+    display: none;
+  }
+  .poster canvas,
   .arc-tl,
   .arc-tl-inner,
   .arc-bl,
   .logo-enter,
   .reveal,
-  .br-line {
-    opacity: 1;
-  }
+  .br-line,
   .divider-grow {
+    opacity: 1;
     transform: none;
   }
   .br-star {

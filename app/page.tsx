@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Fireflies from "./components/Fireflies";
+import GoldReveal from "./components/GoldReveal";
 import Motion from "./components/Motion";
 import Reveal from "./components/Reveal";
 import { Art, TunerProvider } from "./components/Tuner";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main className="poster-wrap">
       <TunerProvider>
+        <GoldReveal />
         <div className="poster">
           <Fireflies />
           <Motion />
@@ -49,7 +51,7 @@ export default function Home() {
                 className="logo-enter mx-auto w-[17cqw]"
               />
 
-              <Reveal delay={500}>
+              <Reveal delay={80}>
                 <h1 className="title gold-shimmer">
                   NEXT FRAME SHORT FILM
                   <br />
@@ -57,7 +59,7 @@ export default function Home() {
                 </h1>
               </Reveal>
 
-              <Reveal delay={800}>
+              <Reveal delay={220}>
                 <p className="body">
                   The stage is set for “Next Frame Short Film Festival 2026,”
                   <Br /> organized by the Film and Television Studies Students’
@@ -67,7 +69,7 @@ export default function Home() {
                 </p>
               </Reveal>
 
-              <Reveal delay={100}>
+              <Reveal delay={360}>
                 <p className="body" style={{ marginTop: "3cqw" }}>
                   We warmly invite you,
                 </p>
@@ -75,7 +77,7 @@ export default function Home() {
 
               <div className="rule divider-grow" />
 
-              <Reveal>
+              <Reveal delay={500}>
                 <p className="body">
                   to join us as we celebrate 10 years of Film and Television
                   Studies and
@@ -84,7 +86,7 @@ export default function Home() {
                 </p>
               </Reveal>
 
-              <Reveal>
+              <Reveal delay={660}>
                 <h2 className="event-title">Red Carpet and Award Ceremony</h2>
                 <p className="event-detail">
                   20th November 2026
@@ -95,7 +97,7 @@ export default function Home() {
                 </p>
               </Reveal>
 
-              <Reveal>
+              <Reveal delay={820}>
                 <h2 className="event-title">Official Film Screening</h2>
                 <p className="event-detail">
                   17th November 2026
@@ -106,7 +108,7 @@ export default function Home() {
                 </p>
               </Reveal>
 
-              <Reveal>
+              <Reveal delay={980}>
                 <p className="body" style={{ marginTop: "4.4cqw" }}>
                   If you’re available, we’d love for you to join us on November
                   17 for the
@@ -114,7 +116,7 @@ export default function Home() {
                 </p>
               </Reveal>
 
-              <Reveal>
+              <Reveal delay={1120}>
                 <p className="closing">We look forward to welcoming you!</p>
               </Reveal>
             </div>
