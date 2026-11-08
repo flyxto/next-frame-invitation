@@ -1,69 +1,120 @@
 import Image from "next/image";
+import Reveal from "./components/Reveal";
+import { Art, TunerProvider } from "./components/Tuner";
+
+/** Line break that only applies on wider screens, matching the poster's line wrapping. */
+const Br = () => <br className="hidden sm:inline" />;
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="poster-wrap">
+      <TunerProvider>
+        <div className="poster">
+          {/* Decorative artwork (position/scale adjustable via the ⚙ panel) */}
+          <Art
+            id="outer"
+            src="/images/top-left-outer-arc.png"
+            width={1398}
+            height={1090}
+            className="arc-tl"
+          />
+          <Art
+            id="inner"
+            src="/images/top-left-inner-arc.png"
+            width={831}
+            height={648}
+            className="arc-tl-inner"
+          />
+          <Art
+            id="bottomLeft"
+            src="/images/bottom-left-arc.png"
+            width={648}
+            height={832}
+            className="arc-bl"
+          />
+          <Art id="lines" className="lines-br" />
+
+          <div className="content">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/images/logo.png"
+              alt="Next Frame"
+              width={408}
+              height={397}
+              priority
+              className="logo-enter mx-auto w-[17cqw]"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            <Reveal delay={500}>
+              <h1 className="title gold-shimmer">
+                NEXT FRAME SHORT FILM
+                <br />
+                FESTIVAL 2026
+              </h1>
+            </Reveal>
+
+            <Reveal delay={800}>
+              <p className="body">
+                The stage is set for “Next Frame Short Film Festival 2026,”
+                <Br /> organized by the Film and Television Studies Students’
+                Association,
+                <Br /> Department of Drama, Cinema and Television,
+                <Br /> University of Kelaniya.
+              </p>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <p className="body" style={{ marginTop: "3cqw" }}>
+                We warmly invite you,
+              </p>
+            </Reveal>
+
+            <div className="rule divider-grow" />
+
+            <Reveal>
+              <p className="body">
+                to join us as we celebrate 10 years of Film and Television
+                Studies and
+                <Br /> honor the extraordinary talent of emerging filmmakers.
+                <Br /> Please note the date and schedule for the main events.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <h2 className="event-title">Red Carpet and Award Ceremony</h2>
+              <p className="event-detail">
+                20th November 2026
+                <br />
+                2:00 PM Onwards
+                <br />
+                FCT Auditorium, University of Kelaniya
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <h2 className="event-title">Official Film Screening</h2>
+              <p className="event-detail">
+                17th November 2026
+                <br />
+                9:00 AM Onwards
+                <br />
+                FCT Auditorium, University of Kelaniya
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p className="body" style={{ marginTop: "4.4cqw" }}>
+                If you’re available, we’d love for you to join us on November 17
+                for the
+                <Br /> official Film Screenings as well!
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p className="closing">We look forward to welcoming you!</p>
+            </Reveal>
+          </div>
         </div>
-      </main>
-    </div>
+      </TunerProvider>
+    </main>
   );
 }
