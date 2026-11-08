@@ -142,6 +142,12 @@ export default function BottomRightLines({
           gradientTransform="translate(551.84 -166.94) rotate(-109.38) scale(1 -1)"
           xlinkHref="#linear-gradient"
         />
+
+        <radialGradient id="star-glow">
+          <stop offset="0" stopColor="#ffe9a0" stopOpacity="0.9" />
+          <stop offset="0.4" stopColor="#f5c25a" stopOpacity="0.35" />
+          <stop offset="1" stopColor="#f5c25a" stopOpacity="0" />
+        </radialGradient>
       </defs>
       <g>
         <path
@@ -217,6 +223,658 @@ export default function BottomRightLines({
           d="M.33,270.25c-2.38-44.53,8.27-85.45,31.79-121.93,21.8-33.82,54.64-63.91,97.61-89.42C202.87,15.46,281.09.15,281.87,0l.14.43c-.78.15-78.88,15.44-151.91,58.82C62.7,99.27-14.04,172.09,3.07,291.68l-.62.06c-1.04-7.25-1.75-14.42-2.12-21.49Z"
         />
       </g>
+      {/* STARS-START */}
+      <g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="9.0s"
+            begin="2.5s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M43.26,354.46c13.68-52.83,42.19-97.64,84.73-133.19,34.04-28.44,77.08-51.04,127.93-67.19,86.57-27.48,166.86-26.66,167.66-26.65"
+          />
+          <animate
+            attributeName="opacity"
+            dur="9.0s"
+            begin="2.5s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="13.5s"
+            begin="9.85s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M43.26,354.46c13.68-52.83,42.19-97.64,84.73-133.19,34.04-28.44,77.08-51.04,127.93-67.19,86.57-27.48,166.86-26.66,167.66-26.65"
+          />
+          <animate
+            attributeName="opacity"
+            dur="13.5s"
+            begin="9.85s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="15.3s"
+            begin="2.85s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M119.28,214.64c32.92-28.93,75.04-52.21,125.18-69.21,85.35-28.93,165.45-29.58,166.25-29.58"
+          />
+          <animate
+            attributeName="opacity"
+            dur="15.3s"
+            begin="2.85s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="11.7s"
+            begin="9.3s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M119.28,214.64c32.92-28.93,75.04-52.21,125.18-69.21,85.35-28.93,165.45-29.58,166.25-29.58"
+          />
+          <animate
+            attributeName="opacity"
+            dur="11.7s"
+            begin="9.3s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="13.5s"
+            begin="3.2s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M110.56,208.01c31.81-29.42,73-53.38,122.42-71.23,84.13-30.38,164.04-32.49,164.84-32.51"
+          />
+          <animate
+            attributeName="opacity"
+            dur="13.5s"
+            begin="3.2s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="9.9s"
+            begin="8.75s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M110.56,208.01c31.81-29.42,73-53.38,122.42-71.23,84.13-30.38,164.04-32.49,164.84-32.51"
+          />
+          <animate
+            attributeName="opacity"
+            dur="9.9s"
+            begin="8.75s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="11.7s"
+            begin="3.55s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M101.84,201.38c30.7-29.91,70.96-54.55,119.66-73.25,82.91-31.83,162.64-35.41,163.43-35.44"
+          />
+          <animate
+            attributeName="opacity"
+            dur="11.7s"
+            begin="3.55s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="16.2s"
+            begin="12.25s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M101.84,201.38c30.7-29.91,70.96-54.55,119.66-73.25,82.91-31.83,162.64-35.41,163.43-35.44"
+          />
+          <animate
+            attributeName="opacity"
+            dur="16.2s"
+            begin="12.25s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="9.9s"
+            begin="3.9s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M93.13,194.75c29.59-30.4,68.92-55.72,116.91-75.27,81.69-33.28,161.23-38.33,162.02-38.38"
+          />
+          <animate
+            attributeName="opacity"
+            dur="9.9s"
+            begin="3.9s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="14.4s"
+            begin="11.7s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M93.13,194.75c29.59-30.4,68.92-55.72,116.91-75.27,81.69-33.28,161.23-38.33,162.02-38.38"
+          />
+          <animate
+            attributeName="opacity"
+            dur="14.4s"
+            begin="11.7s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="16.2s"
+            begin="4.25s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M84.41,188.11c28.48-30.88,66.88-56.89,114.15-77.29,80.47-34.74,159.82-41.25,160.61-41.31"
+          />
+          <animate
+            attributeName="opacity"
+            dur="16.2s"
+            begin="4.25s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="12.6s"
+            begin="11.15s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M84.41,188.11c28.48-30.88,66.88-56.89,114.15-77.29,80.47-34.74,159.82-41.25,160.61-41.31"
+          />
+          <animate
+            attributeName="opacity"
+            dur="12.6s"
+            begin="11.15s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="14.4s"
+            begin="4.6s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M75.7,181.48c27.36-31.37,64.84-58.06,111.39-79.31,79.25-36.19,158.41-44.16,159.2-44.24"
+          />
+          <animate
+            attributeName="opacity"
+            dur="14.4s"
+            begin="4.6s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="10.8s"
+            begin="10.6s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M75.7,181.48c27.36-31.37,64.84-58.06,111.39-79.31,79.25-36.19,158.41-44.16,159.2-44.24"
+          />
+          <animate
+            attributeName="opacity"
+            dur="10.8s"
+            begin="10.6s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="12.6s"
+            begin="4.95s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M66.98,174.85c26.25-31.86,62.8-59.23,108.64-81.34,78.03-37.64,157-47.08,157.79-47.17"
+          />
+          <animate
+            attributeName="opacity"
+            dur="12.6s"
+            begin="4.95s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="9.0s"
+            begin="10.05s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M66.98,174.85c26.25-31.86,62.8-59.23,108.64-81.34,78.03-37.64,157-47.08,157.79-47.17"
+          />
+          <animate
+            attributeName="opacity"
+            dur="9.0s"
+            begin="10.05s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="10.8s"
+            begin="5.3s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M58.26,168.22c25.14-32.35,60.76-60.4,105.88-83.36,76.81-39.09,155.59-50,156.38-50.1"
+          />
+          <animate
+            attributeName="opacity"
+            dur="10.8s"
+            begin="5.3s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="15.3s"
+            begin="13.55s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M58.26,168.22c25.14-32.35,60.76-60.4,105.88-83.36,76.81-39.09,155.59-50,156.38-50.1"
+          />
+          <animate
+            attributeName="opacity"
+            dur="15.3s"
+            begin="13.55s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="9.0s"
+            begin="5.65s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M49.55,161.59c24.03-32.84,58.72-61.57,103.12-85.38,75.59-40.54,154.18-52.92,154.97-53.04"
+          />
+          <animate
+            attributeName="opacity"
+            dur="9.0s"
+            begin="5.65s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="13.5s"
+            begin="13.0s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M49.55,161.59c24.03-32.84,58.72-61.57,103.12-85.38,75.59-40.54,154.18-52.92,154.97-53.04"
+          />
+          <animate
+            attributeName="opacity"
+            dur="13.5s"
+            begin="13.0s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="15.3s"
+            begin="6.0s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M40.83,154.95c22.91-33.33,56.68-62.74,100.37-87.4C215.56,25.56,293.97,11.72,294.75,11.59"
+          />
+          <animate
+            attributeName="opacity"
+            dur="15.3s"
+            begin="6.0s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="11.7s"
+            begin="12.45s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M40.83,154.95c22.91-33.33,56.68-62.74,100.37-87.4C215.56,25.56,293.97,11.72,294.75,11.59"
+          />
+          <animate
+            attributeName="opacity"
+            dur="11.7s"
+            begin="12.45s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="13.5s"
+            begin="6.35s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M.33,270.25c-2.38-44.53,8.27-85.45,31.79-121.93,21.8-33.82,54.64-63.91,97.61-89.42C202.87,15.46,281.09.15,281.87,0"
+          />
+          <animate
+            attributeName="opacity"
+            dur="13.5s"
+            begin="6.35s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(1)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+        <g className="br-star" opacity="0" transform="scale(1)">
+          <animateMotion
+            dur="9.9s"
+            begin="11.9s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0;1;1"
+            keyTimes="0;0.6;1"
+            path="M.33,270.25c-2.38-44.53,8.27-85.45,31.79-121.93,21.8-33.82,54.64-63.91,97.61-89.42C202.87,15.46,281.09.15,281.87,0"
+          />
+          <animate
+            attributeName="opacity"
+            dur="9.9s"
+            begin="11.9s"
+            repeatCount="indefinite"
+            values="0;1;1;1;0;0"
+            keyTimes="0;0.06;0.3;0.54;0.6;1"
+          />
+          <g transform="scale(0.75)">
+            <circle r="5" fill="url(#star-glow)" />
+            <path
+              d="M0,-4.2 L0.7,-0.7 L4.2,0 L0.7,0.7 L0,4.2 L-0.7,0.7 L-4.2,0 L-0.7,-0.7 Z"
+              fill="#fff3c4"
+            />
+            <circle r="1" fill="#ffffff" />
+          </g>
+        </g>
+      </g>
+      {/* STARS-END */}
     </svg>
   );
 }

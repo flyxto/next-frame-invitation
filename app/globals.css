@@ -327,3 +327,9 @@ body {
     br-in 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) calc(0.5s + var(--i) * 0.14s) forwards,
     br-wave 5s ease-in-out calc(3s + var(--i) * 0.22s) infinite;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .br-star {
+    display: none;
+  }
+}
