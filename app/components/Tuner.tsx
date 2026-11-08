@@ -205,7 +205,7 @@ function Panel({ cfg, update }: { cfg: All; update: (c: All) => void }) {
 
   return (
     <div
-      className="fixed right-4 bottom-4 z-50 text-white"
+      className="fixed right-4 bottom-14 z-50 text-white"
       style={{ fontFamily: "system-ui, sans-serif" }}
     >
       {open && (

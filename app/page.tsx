@@ -119,9 +119,12 @@ export default function Home() {
               <Reveal delay={1120}>
                 <p className="closing">We look forward to welcoming you!</p>
               </Reveal>
+
+              <p className="credit">Developed By Flyxto Technologies</p>
             </div>
           </div>
         </div>
+        <footer className="credit">FLYXTO TICKETS</footer>
       </TunerProvider>
     </main>
   );

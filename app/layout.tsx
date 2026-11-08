@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "Next Frame Short Film Festival 2026",
   description:
     "You're invited to Next Frame Short Film Festival 2026, organized by the Film and Television Studies Students' Association, University of Kelaniya.",
+  icons: {
+    icon: [{ url: "/images/logo.png", type: "image/png" }],
+    apple: [{ url: "/images/logo.png", type: "image/png" }],
+  },
 };
 
 export const viewport: Viewport = {
