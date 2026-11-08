@@ -52,16 +52,16 @@ export default function Motion() {
         )
         .fromTo(
           q(".logo-enter"),
-          { autoAlpha: 0, scale: 0.86, y: 18, filter: "blur(8px)" },
-          {
-            autoAlpha: 1,
-            scale: 1,
-            y: 0,
-            filter: "blur(0px)",
-            duration: 1.35,
-            clearProps: "filter",
-          },
+          // No CSS filters on the PNG: animating them renders a white box on iOS Safari.
+          { autoAlpha: 0, scale: 0.86, y: 18 },
+          { autoAlpha: 1, scale: 1, y: 0, duration: 1.35 },
           0,
+        )
+        .fromTo(
+          q(".logo-glow"),
+          { autoAlpha: 0, scale: 0.7 },
+          { autoAlpha: 0.55, scale: 1, duration: 1.6 },
+          0.1,
         )
         .fromTo(
           q("canvas"),
@@ -82,8 +82,10 @@ export default function Motion() {
         );
 
       tweens.push(
-        gsap.to(q(".logo-enter"), {
-          filter: "blur(0px) drop-shadow(0 0 22px rgba(240,195,106,0.55))",
+        // Breathing glow: opacity/scale on its own layer, never a filter
+        gsap.to(q(".logo-glow"), {
+          opacity: 1,
+          scale: 1.12,
           duration: 2.4,
           ease: "sine.inOut",
           yoyo: true,

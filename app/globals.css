@@ -145,6 +145,25 @@ body {
   transform-origin: center;
 }
 
+.logo-wrap {
+  position: relative;
+}
+
+/* Soft halo behind the logo, as its own layer (no filters on the PNG: iOS Safari
+   draws a white box when CSS filters are animated on it). */
+.logo-glow {
+  position: absolute;
+  inset: -45%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(240, 195, 106, 0.32) 0%,
+    rgba(240, 195, 106, 0.12) 35%,
+    rgba(240, 195, 106, 0) 68%
+  );
+}
+
 /* Held back until the gold foil has left. Motion.tsx / Reveal.tsx bring them in. */
 @media (prefers-reduced-motion: no-preference) {
   .poster canvas,
@@ -152,6 +171,7 @@ body {
   .arc-tl-inner,
   .arc-bl,
   .logo-enter,
+  .logo-glow,
   .reveal,
   .br-line,
   .divider-grow {
@@ -197,6 +217,9 @@ body {
   .divider-grow {
     opacity: 1;
     transform: none;
+  }
+  .logo-glow {
+    opacity: 0.55;
   }
   .br-star {
     display: none;
