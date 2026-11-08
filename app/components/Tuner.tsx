@@ -23,7 +23,7 @@ type Piece = {
 
 /**
  * x = distance from the left/right edge, y = distance from the top/bottom edge,
- * w = width. All in cqw (1cqw = 1% of the poster width). Negative = pushed past the edge.
+ * w = width. All in u (1u = 1% of the page width, capped at 11px on large screens). Negative = pushed past the edge.
  * Paste your copied values over these defaults to make a tweak permanent.
  */
 export const PIECES = {
@@ -109,9 +109,9 @@ export function Art({
   const { side, vert } = PIECES[id];
   const c = useContext(Ctx)[id];
   const style: CSSProperties = {
-    [side]: `${c.x}cqw`,
-    [vert]: `${c.y}cqw`,
-    width: `${c.w}cqw`,
+    [side]: `calc(var(--u) * ${c.x})`,
+    [vert]: `calc(var(--u) * ${c.y})`,
+    width: `calc(var(--u) * ${c.w})`,
     height: "auto",
   };
   const cls = `pointer-events-none absolute select-none ${className}`;
@@ -182,7 +182,7 @@ function Panel({ cfg, update }: { cfg: All; update: (c: All) => void }) {
     const rows = IDS.map((k) => {
       const { side, vert } = PIECES[k];
       const v = cfg[k];
-      return `${k}: ${side}=${r1(v.x)}cqw ${vert}=${r1(v.y)}cqw width=${r1(v.w)}cqw`;
+      return `${k}: ${side}=${r1(v.x)}u ${vert}=${r1(v.y)}u width=${r1(v.w)}u`;
     });
     return `${rows.join("\n")}\n\n${JSON.stringify(cfg)}`;
   };
@@ -245,8 +245,8 @@ function Panel({ cfg, update }: { cfg: All; update: (c: All) => void }) {
             onChange={(w) => set({ w })}
           />
           <p className="mt-2 text-[0.65rem] text-white/50">
-            Units are cqw (% of poster width). Negative offsets push the piece
-            past the edge.
+            Units are u (% of page width, capped on big screens). Negative
+            offsets push the piece past the edge.
           </p>
 
           <div className="mt-3 flex gap-2">
