@@ -129,17 +129,16 @@ export default function Invitation({ guest }: { guest?: InviteGuest | null }) {
               <p className="closing">We look forward to welcoming you!</p>
             </Reveal>
 
-            {guest ? (
-              <Reveal delay={1240}>
-                <RsvpPanel guest={guest} />
-              </Reveal>
-            ) : null}
-
             <p className="credit">Developed By Flyxto Technologies</p>
           </div>
         </div>
       </div>
-      <footer className="credit">FLYXTO TICKETS</footer>
+      {guest ? <RsvpPanel guest={guest} /> : null}
+      <footer className="credit footer-credit">
+        <span>POWERED BY</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/flyxto-logo.png" alt="Flyxto" width={581} height={212} />
+      </footer>
     </main>
   );
 }
