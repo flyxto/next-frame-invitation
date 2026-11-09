@@ -342,14 +342,16 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding-block: 0.4rem;
+  padding-block: 0.75rem;
   font-size: 15px;
 }
 
 .footer-credit img {
   display: block;
   width: auto;
-  height: 24px;
+  height: 19px;
+  position: relative;
+  top: 3px;
 }
 
 .guest-name {
@@ -585,7 +587,7 @@ body {
   position: fixed;
   right: 1.25rem;
   left: 1.25rem;
-  bottom: calc(38px + 1.3rem);
+  bottom: calc(43px + 1.3rem);
   z-index: 36;
   width: auto;
   animation:
