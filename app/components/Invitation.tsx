@@ -134,8 +134,10 @@ export default function Invitation({ guest }: { guest?: InviteGuest | null }) {
       {guest ? <RsvpPanel guest={guest} /> : null}
       <footer className="credit footer-credit">
         <span>POWERED BY</span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/flyxto-logo.png" alt="Flyxto" width={581} height={212} />
+        <a href="https://www.flyxto.com" target="_blank" rel="noopener noreferrer">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/flyxto-logo.png" alt="Flyxto" width={581} height={212} />
+        </a>
       </footer>
     </main>
   );

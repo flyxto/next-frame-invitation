@@ -352,6 +352,12 @@ body {
   line-height: 1;
 }
 
+.footer-credit a {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
 .footer-credit img {
   display: block;
   width: auto;
