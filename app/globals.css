@@ -261,7 +261,7 @@ body {
 }
 
 .content {
-  padding: 14.6cqw 6cqw calc(8cqw + 2.6rem);
+  padding: 14.6cqw 6cqw calc(8cqw + 7.25rem);
   text-align: center;
   font-family: var(--font-tinos), "Times New Roman", serif;
   --fs: clamp(15px, 2.3cqw, 24px);
@@ -341,17 +341,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding-block: 0.75rem;
-  font-size: 15px;
+  gap: 0.45rem;
+  padding: 0.28rem 1rem;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+}
+
+.footer-credit span {
+  line-height: 1;
 }
 
 .footer-credit img {
   display: block;
   width: auto;
-  height: 19px;
-  position: relative;
-  top: 3px;
+  height: 14px;
 }
 
 .guest-name {
