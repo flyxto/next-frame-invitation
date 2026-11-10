@@ -129,8 +129,6 @@ export default function Invitation({ guest }: { guest?: InviteGuest | null }) {
             <Reveal delay={1120}>
               <p className="closing">We look forward to welcoming you!</p>
             </Reveal>
-
-            <p className="credit">Developed By Flyxto Technologies</p>
           </div>
         </div>
       </div>
@@ -140,8 +138,10 @@ export default function Invitation({ guest }: { guest?: InviteGuest | null }) {
       </div>
       <footer className="credit footer-credit">
         <span>POWERED BY</span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/flyxto-logo.png" alt="Flyxto" width={581} height={212} />
+        <a href="https://www.flyxto.com" target="_blank" rel="noopener noreferrer">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/flyxto-logo.png" alt="Flyxto" width={581} height={212} />
+        </a>
       </footer>
     </main>
   );
