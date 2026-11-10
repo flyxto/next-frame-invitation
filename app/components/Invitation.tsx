@@ -92,22 +92,11 @@ export default function Invitation({ guest }: { guest?: InviteGuest | null }) {
                 to join us as we celebrate 10 years of Film and Television
                 Studies and
                 <Br /> honor the extraordinary talent of emerging filmmakers.
-                <Br /> Please note the date and schedule for the main events.
+                <Br /> It would be our honor to welcome you on the following dates
               </p>
             </Reveal>
 
             <Reveal delay={660}>
-              <h2 className="event-title">Red Carpet and Award Ceremony</h2>
-              <p className="event-detail">
-                20th November 2026
-                <br />
-                2:00 PM Onwards
-                <br />
-                FCT Auditorium, University of Kelaniya
-              </p>
-            </Reveal>
-
-            <Reveal delay={820}>
               <h2 className="event-title">Official Film Screening</h2>
               <p className="event-detail">
                 17th November 2026
@@ -118,11 +107,20 @@ export default function Invitation({ guest }: { guest?: InviteGuest | null }) {
               </p>
             </Reveal>
 
+            <Reveal delay={820}>
+              <h2 className="event-title">Red Carpet and Award Ceremony</h2>
+              <p className="event-detail">
+                20th November 2026
+                <br />
+                2:00 PM Onwards
+                <br />
+                FCT Auditorium, University of Kelaniya
+              </p>
+            </Reveal>
+
             <Reveal delay={980}>
               <p className="body" style={{ marginTop: "4.4cqw" }}>
-                If you’re available, we’d love for you to join us on November 17
-                for the
-                <Br /> official Film Screenings as well!
+                Your esteemed presence would be greatly valued at both occasions
               </p>
             </Reveal>
 
