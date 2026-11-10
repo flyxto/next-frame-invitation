@@ -127,23 +127,6 @@ export default function GoldReveal() {
         <div className="gold-veil__grain" />
       </div>
       <div className="gold-veil__seal">
-        <p className="gold-veil__title">
-          Next Frame
-          <br />
-          Short Film Festival
-          <small>2026</small>
-        </p>
-        <div className="gold-veil__ornament" aria-hidden="true">
-          <span />
-          <i />
-          <span />
-        </div>
-        <p className="gold-veil__kicker">You are cordially invited</p>
-        <div className="gold-veil__ornament" aria-hidden="true">
-          <span />
-          <i />
-          <span />
-        </div>
         <button
           type="button"
           className="open-btn"
