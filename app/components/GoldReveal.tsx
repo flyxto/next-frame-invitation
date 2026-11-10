@@ -4,11 +4,12 @@ import { useEffect, useRef } from "react";
 
 /**
  * Gold foil drawn off toward the top-left corner, uncovering the invitation.
- * The sweep itself is CSS (it starts on first paint). This component only
- * locks scrolling, and lets a click or Escape finish early.
+ * The foil waits closed behind an "Open Invitation" button; clicking it starts
+ * the CSS sweep. Scrolling stays locked until the foil has left.
  */
 export default function GoldReveal() {
   const veil = useRef<HTMLDivElement>(null);
+  const openRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const root = veil.current;
@@ -50,30 +51,21 @@ export default function GoldReveal() {
       finish();
     };
 
+    let timer = 0;
+    let opened = false;
+
+    // Once opened, a tap or Escape lets the foil finish early.
     const skip = (event: Event) => {
-      if (
-        event instanceof KeyboardEvent &&
-        event.key !== "Escape" &&
-        event.key !== "Enter" &&
-        event.key !== " "
-      ) {
-        return;
-      }
-      if (event instanceof KeyboardEvent) event.preventDefault();
+      if (!opened) return;
+      if (event instanceof KeyboardEvent && event.key !== "Escape") return;
       finish();
     };
 
-    sheet?.addEventListener("animationend", onEnd);
-    root.addEventListener("pointerdown", skip);
-    window.addEventListener("keydown", skip);
-
-    const retreat = sheet?.getAnimations?.().find((clip): clip is CSSAnimation => {
-      return clip instanceof CSSAnimation && clip.animationName === "gold-retreat";
-    });
-    if (retreat?.playState === "finished") finish();
-
     const watch = () => {
       if (contentStarted || finished) return;
+      const retreat = sheet?.getAnimations?.().find((clip): clip is CSSAnimation => {
+        return clip instanceof CSSAnimation && clip.animationName === "gold-retreat";
+      });
       const progress = retreat?.effect?.getComputedTiming().progress;
       if (typeof progress === "number" && progress >= 0.68) {
         beginContent();
@@ -81,11 +73,42 @@ export default function GoldReveal() {
       }
       frame = window.requestAnimationFrame(watch);
     };
-    frame = window.requestAnimationFrame(watch);
 
-    const timer = window.setTimeout(finish, 4500);
+    // Background music starts on the click (browsers only allow audio after a gesture).
+    let audio: HTMLAudioElement | undefined;
+    let fade = 0;
+    const TARGET_VOLUME = 0.6;
+
+    const startMusic = () => {
+      audio = new Audio("/audio/background-music.wav");
+      audio.loop = true;
+      audio.volume = 0;
+      audio.play().catch(() => {});
+      fade = window.setInterval(() => {
+        if (!audio) return;
+        audio.volume = Math.min(TARGET_VOLUME, audio.volume + 0.04);
+        if (audio.volume >= TARGET_VOLUME) window.clearInterval(fade);
+      }, 100);
+    };
+
+    const open = () => {
+      if (opened) return;
+      opened = true;
+      startMusic();
+      root.classList.add("is-opening");
+      frame = window.requestAnimationFrame(watch);
+      timer = window.setTimeout(finish, 4500);
+    };
+
+    openRef.current = open;
+    sheet?.addEventListener("animationend", onEnd);
+    root.addEventListener("pointerdown", skip);
+    window.addEventListener("keydown", skip);
 
     return () => {
+      openRef.current = null;
+      window.clearInterval(fade);
+      audio?.pause();
       window.clearTimeout(timer);
       window.cancelAnimationFrame(frame);
       sheet?.removeEventListener("animationend", onEnd);
@@ -99,9 +122,18 @@ export default function GoldReveal() {
   }, []);
 
   return (
-    <div ref={veil} className="gold-veil" aria-hidden="true">
-      <div className="gold-veil__sheet">
+    <div ref={veil} className="gold-veil">
+      <div className="gold-veil__sheet" aria-hidden="true">
         <div className="gold-veil__grain" />
+      </div>
+      <div className="gold-veil__seal">
+        <button
+          type="button"
+          className="open-btn"
+          onClick={() => openRef.current?.()}
+        >
+          <span>Open Invitation</span>
+        </button>
       </div>
     </div>
   );
