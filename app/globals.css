@@ -717,27 +717,108 @@ body {
   animation: reply-glow 2.8s ease-in-out infinite;
 }
 
-.reply-fab {
+.fab-bar {
   position: fixed;
-  right: 1.25rem;
-  left: 1.25rem;
+  right: 0;
+  left: 0;
   bottom: calc(43px + 1.3rem);
   z-index: 36;
-  width: auto;
+  width: min(100% - 2.5rem, 40rem);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.reply-fab {
+  flex: 1;
+  min-width: 0;
+  height: 3.7rem;
+  padding-block: 0;
   animation:
     fab-in 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) 1.4s both,
     reply-glow 2.8s ease-in-out 2.1s infinite;
 }
 
+.loc-fab {
+  flex: none;
+  width: 3.7rem;
+  height: 3.7rem;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  animation:
+    fab-in 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) 1.55s both,
+    reply-glow 2.8s ease-in-out 2.1s infinite;
+}
+
 @media (min-width: 768px) {
+  .fab-bar {
+    width: 19.1rem;
+  }
+
   .reply-fab {
-    right: 0;
-    left: 0;
-    width: 15rem;
-    margin-inline: auto;
-    padding: 0.7rem 1.5rem;
+    height: 3.3rem;
     font-size: 0.95rem;
   }
+
+  .loc-fab {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+}
+
+.loc-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loc-badge {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  color: #f0c36a;
+  border: 1px solid rgba(240, 195, 106, 0.65);
+  background: radial-gradient(circle, rgba(240, 195, 106, 0.28) 0%, rgba(240, 195, 106, 0.06) 70%);
+  box-shadow:
+    0 0 0 5px rgba(240, 195, 106, 0.08),
+    0 0 24px rgba(240, 195, 106, 0.3);
+}
+
+.loc-rule {
+  width: 3.5rem;
+  height: 1px;
+  margin-top: 0.45rem;
+  background: linear-gradient(90deg, #f0c36a, transparent);
+}
+
+.rsvp .loc-venue {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.loc-venue strong {
+  color: #fff1c4;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+.rsvp.loc-card .loc-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.1rem;
+  height: 3.3rem;
+  padding-block: 0;
+  font-size: 0.95rem;
+  text-decoration: none;
 }
 
 @keyframes fab-in {
@@ -863,6 +944,7 @@ body {
   .btn-3d,
   .btn-3d::before,
   .reply-fab,
+  .loc-fab,
   .modal-backdrop,
   .modal-card,
   .rsvp-choice.is-on,

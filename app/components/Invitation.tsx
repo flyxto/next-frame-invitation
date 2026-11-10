@@ -3,6 +3,7 @@ import type { InviteGuest } from "../lib/guest";
 import Art from "./Art";
 import Fireflies from "./Fireflies";
 import GoldReveal from "./GoldReveal";
+import LocationPanel from "./LocationPanel";
 import Motion from "./Motion";
 import Reveal from "./Reveal";
 import RsvpPanel from "./RsvpPanel";
@@ -133,7 +134,10 @@ export default function Invitation({ guest }: { guest?: InviteGuest | null }) {
           </div>
         </div>
       </div>
-      {guest ? <RsvpPanel guest={guest} /> : null}
+      <div className="fab-bar">
+        {guest ? <RsvpPanel guest={guest} /> : null}
+        <LocationPanel />
+      </div>
       <footer className="credit footer-credit">
         <span>POWERED BY</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
