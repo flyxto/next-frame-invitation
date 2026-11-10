@@ -17,7 +17,7 @@ export default function InvitePage({
   params: Promise<{ code: string }>;
 }) {
   return (
-    <Suspense fallback={<p className="pending-note">Opening your invitation…</p>}>
+    <Suspense fallback={null}>
       <Invite params={params} />
     </Suspense>
   );
